@@ -1,0 +1,181 @@
+/* General styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc; /* Light background color */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for main content */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Heading */
+h2 {
+    font-size: 2.5rem;
+    color: #3b3b98; /* Darker blue for headings */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Product section */
+.product-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual product card styling */
+.product {
+    background: #ffffff; /* White background for product cards */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 15px;
+    text-align: center;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product img {
+    width: 200px; /* Set the desired width */
+    height: 200px; /* Set the desired height */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+    border-radius: 8px; /* Optional: adds rounded corners to images */
+    margin-bottom: 10px; /* Space below images */
+}
+
+/* Chatbot styles */
+#chatbox {
+    display: none; /* Initially hidden */
+    position: fixed;
+    bottom: 100px; /* Adjusted to ensure the logo is not covered */
+    right: 30px;
+    width: 350px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.chatbot-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3b3b98;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Response area */
+#responses {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 0;
+    background-color: #f8f9fa; /* Light grey background */
+}
+
+/* Message styles */
+#responses div {
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 80%;
+    word-wrap: break-word; /* Ensure long words wrap */
+}
+
+/* User and chatbot messages */
+.user-message {
+    background-color: #007bff; /* User message background color */
+    color: white;
+    text-align: left; /* Align user messages to the right */
+    margin-left: auto; /* Push user messages to the right */
+}
+
+.chatbot-message {
+    background-color: #e2e3e5; /* Chatbot message background color */
+    color: #333;
+    text-align: left; /* Align chatbot messages to the left */
+    margin-right: auto; /* Push chatbot messages to the left */
+}
+
+/* Input area */
+.input-area {
+    display: flex;
+    padding: 5px;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+}
+
+#user_input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+#user_input::placeholder {
+    color: #aaa;
+}
+
+#send {
+    margin-left: 5px;
+    padding: 8px 12px;
+    border: none;
+    background-color: #28a745; /* Green button */
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#send:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Chatbot logo */
+.chatbot-logo {
+    position: fixed;
+    bottom: 10px; /* Adjusted to prevent overlap */
+    right: 30px;
+    width: 70px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 1001; /* Ensure logo is above the chatbot */
+}
+
+.chatbot-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Scrollbar customization */
+#responses::-webkit-scrollbar {
+    width: 8px;
+}
+
+#responses::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 4px;
+}
+
+#responses::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Negotiation Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Price Negotiation Chatbot 🤖💬</h2>
+        <div class="product-info">
+            {% for product, details in products.items() %}
+                <div class="product">
+                    <img src="{{ url_for('static', filename='images/' + product + '.jpg') }}" alt="{{ product }}">
+                    <h3>{{ product.capitalize() }}</h3>
+                    <p>Price: ${{ details.price }}</p>
+                    <p>Discount: {{ details.discount }}%</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <img id="chatbotToggle" class="chatbot-logo" src="{{ url_for('static', filename='images/chatbot-img.jpg') }}" alt="Chatbot Logo">
+
+        <div id="chatbox">
+            <div class="chatbot-name">Chatbot 🤖</div>
+            <div id="responses"></div>
+            <div class="input-area">
+                <input type="text" id="user_input" placeholder="Type your offer..." />
+                <button id="send">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
